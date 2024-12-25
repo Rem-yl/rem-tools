@@ -1,0 +1,16 @@
+hydra:
+  run:
+    dir: output/${hydra.job.override_dirname}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}
+    subdir: ${hydra.job.override_dirname}
+  job_logging:
+    root:
+      handlers: null  # 禁止 hydra 的日志
+
+defaults:
+  - model: test
+  - db: test
+  - _self_  # 主配置覆盖默认配置
+environment_name: "test"
+log_level: "info"

@@ -1,0 +1,4 @@
+host: test.db.server
+port: 5432
+username: test_user
+password: test_password

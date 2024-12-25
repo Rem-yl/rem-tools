@@ -1,0 +1,29 @@
+hydra:
+  run:
+    dir: output/${hydra.job.override_dirname}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}
+    subdir: ${hydra.job.override_dirname}
+  job_logging:
+    root:
+      handlers: null  # 禁止 hydra 的日志
+
+universal:
+  table_size: 200000
+  model_save_path: null
+dataset:
+  train_path: "data/tmp.data"
+  val_path: null
+  feature_list: "1-18,20,21,88-93,257,258,263,271,273"
+  batch_size: 1
+model:
+  name: "fm"
+  embedding_dim: 4
+loss:
+  name: bce_with_logit_loss
+optimizer:
+  name: ftrl
+  alpha: 0.01
+
+
+
