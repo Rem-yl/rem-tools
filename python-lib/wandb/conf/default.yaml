@@ -1,0 +1,7 @@
+defaults:
+  - _self_
+  - model: resnet18
+  - dataset: cifar10
+  - optimizer: adam
+
+project_name: "wandb_demo"
