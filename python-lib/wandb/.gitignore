@@ -1,2 +1,5 @@
 outputs/
 wandb/
+*.onnx
+data/
+MNIST/

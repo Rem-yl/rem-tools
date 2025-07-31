@@ -1,7 +1,14 @@
 defaults:
-  - _self_
+  - _self_  # 子模块的配置会覆盖默认配置
   - model: resnet18
   - dataset: cifar10
   - optimizer: adam
-
+  # - _self_  # 子模块的配置不会覆盖默认配置
+  
 project_name: "wandb_demo"
+dataset:
+    data_root: data
+    ori_path: "${dataset.data_root}/${dataset.name}"
+    train_path: "${dataset.ori_path}/train"
+    test_path: "${dataset.ori_path}/test"
+    val_path: "${dataset.ori_path}/val"
